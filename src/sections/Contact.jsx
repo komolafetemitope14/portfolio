@@ -2,9 +2,7 @@ function Contact() {
   return (
     <section className="section contact" id="contact">
       <div className="section-content">
-        <p className="section-number">
-          07 / CONTACT
-        </p>
+        <p className="section-number">08 / CONTACT</p>
 
         <div className="contact-layout">
           <div>
@@ -14,10 +12,10 @@ function Contact() {
             </h2>
 
             <p className="contact-description">
-              I'm interested in enterprise infrastructure,
-              cloud engineering, automation and opportunities
-              exploring the integration of AI into infrastructure
-              and software development workflows.
+              I'm interested in enterprise infrastructure, cloud
+              engineering, automation and opportunities exploring the
+              integration of AI into infrastructure and software
+              development workflows.
             </p>
           </div>
 

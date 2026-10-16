@@ -27,9 +27,7 @@ function Hero() {
             <span>Temitope Olumide.</span>
           </h1>
 
-          <h2>
-            Infrastructure & Enterprise Support Engineer
-          </h2>
+          <h2>Infrastructure & Enterprise Support Engineer</h2>
 
           <p className="hero-description">
             I build, support and automate reliable production
@@ -39,9 +37,7 @@ function Hero() {
             technologies.
           </p>
 
-          <p className="hero-location">
-            Lagos, Nigeria
-          </p>
+          <p className="hero-location">Lagos, Nigeria</p>
 
           <div className="hero-buttons">
             <a href="#projects" className="primary-button">
