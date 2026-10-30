@@ -2,6 +2,21 @@ import { motion } from "motion/react";
 
 const projects = [
   {
+    title: "OpsPilot MCP",
+    category: "MCP · INFRASTRUCTURE · AI · SECURITY",
+    description:
+      "Secure Model Context Protocol server for AI-assisted infrastructure observability and diagnostics across PostgreSQL, Docker and Kubernetes, with deterministic diagnostics, least-privilege access, secret redaction and audit logging.",
+    technologies: [
+      "Python",
+      "MCP",
+      "PostgreSQL",
+      "Docker",
+      "Kubernetes",
+    ],
+    github:
+      "https://github.com/komolafetemitope14/opspilot-mcp",
+  },
+  {
     title: "Full-Stack Todo App",
     category: "QA · CI/CD · FULL STACK",
     description:
@@ -69,9 +84,14 @@ const projects = [
 
 function Projects() {
   return (
-    <section className="section projects" id="projects">
+    <section
+      className="section projects"
+      id="projects"
+    >
       <div className="section-content">
-        <p className="section-number">04 / PROJECTS</p>
+        <p className="section-number">
+          04 / PROJECTS
+        </p>
 
         <h2 className="section-heading">
           Selected engineering
