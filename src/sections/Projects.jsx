@@ -1,3 +1,4 @@
+
 import { motion } from "motion/react";
 
 const projects = [
@@ -15,6 +16,23 @@ const projects = [
     ],
     github:
       "https://github.com/komolafetemitope14/opspilot-mcp",
+  },
+  {
+    title: "AI Cluster Reliability Lab",
+    category: "AI INFRASTRUCTURE · SRE · HPC · OBSERVABILITY",
+    description:
+      "Hands-on AI infrastructure reliability engineering lab covering Kubernetes cluster troubleshooting, Slurm/HPC workload scheduling, Prometheus and Grafana monitoring, Python and Bash diagnostic automation, and simulated incident response across 15 technical labs.",
+    technologies: [
+      "Kubernetes",
+      "Slurm",
+      "Prometheus",
+      "Grafana",
+      "Python",
+      "Bash",
+      "Linux",
+    ],
+    github:
+      "https://github.com/komolafetemitope14/ai-cluster-reliability-lab",
   },
   {
     title: "Full-Stack Todo App",
@@ -147,3 +165,4 @@ function Projects() {
 }
 
 export default Projects;
+
