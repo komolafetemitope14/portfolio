@@ -1,4 +1,3 @@
-
 import { motion } from "motion/react";
 
 const projects = [
@@ -16,6 +15,26 @@ const projects = [
     ],
     github:
       "https://github.com/komolafetemitope14/opspilot-mcp",
+  },
+  {
+    title: "IncidentFlow",
+    category: "INFRASTRUCTURE · SRE · DEVOPS · OBSERVABILITY",
+    description:
+      "Containerized incident management application demonstrating infrastructure reliability, REST API development, PostgreSQL persistence, automated testing, continuous integration and application observability. Validated with 18 passing automated tests and a four-service Docker Compose environment.",
+    technologies: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "GitHub Actions",
+      "Prometheus",
+      "Grafana",
+      "pytest",
+    ],
+    image:
+      "projects/incidentflow/incidentflow-architecture.png",
+    github:
+      "https://github.com/komolafetemitope14/incidentflow",
   },
   {
     title: "AI Cluster Reliability Lab",
@@ -135,6 +154,22 @@ function Projects() {
 
               <h3>{project.title}</h3>
 
+              {project.image && (
+                <a
+                  href={`${import.meta.env.BASE_URL}${project.image}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-image-link"
+                >
+                  <img
+                    src={`${import.meta.env.BASE_URL}${project.image}`}
+                    alt={`${project.title} system architecture`}
+                    className="project-image"
+                    loading="lazy"
+                  />
+                </a>
+              )}
+
               <p className="project-description">
                 {project.description}
               </p>
@@ -165,4 +200,3 @@ function Projects() {
 }
 
 export default Projects;
-
