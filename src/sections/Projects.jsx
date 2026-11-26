@@ -1,202 +1,22 @@
-import { motion } from "motion/react";
+cd ~/Projects/portfolio || exit 1
 
-const projects = [
-  {
-    title: "OpsPilot MCP",
-    category: "MCP · INFRASTRUCTURE · AI · SECURITY",
-    description:
-      "Secure Model Context Protocol server for AI-assisted infrastructure observability and diagnostics across PostgreSQL, Docker and Kubernetes, with deterministic diagnostics, least-privilege access, secret redaction and audit logging.",
-    technologies: [
-      "Python",
-      "MCP",
-      "PostgreSQL",
-      "Docker",
-      "Kubernetes",
-    ],
-    github:
-      "https://github.com/komolafetemitope14/opspilot-mcp",
-  },
-  {
-    title: "IncidentFlow",
-    category: "INFRASTRUCTURE · SRE · DEVOPS · OBSERVABILITY",
-    description:
-      "Containerized incident management application demonstrating infrastructure reliability, REST API development, PostgreSQL persistence, automated testing, continuous integration and application observability. Validated with 18 passing automated tests and a four-service Docker Compose environment.",
-    technologies: [
-      "Python",
-      "FastAPI",
-      "PostgreSQL",
-      "Docker",
-      "GitHub Actions",
-      "Prometheus",
-      "Grafana",
-      "pytest",
-    ],
-    image:
-      "projects/incidentflow/incidentflow-architecture.png",
-    github:
-      "https://github.com/komolafetemitope14/incidentflow",
-  },
-  {
-    title: "AI Cluster Reliability Lab",
-    category: "AI INFRASTRUCTURE · SRE · HPC · OBSERVABILITY",
-    description:
-      "Hands-on AI infrastructure reliability engineering lab covering Kubernetes cluster troubleshooting, Slurm/HPC workload scheduling, Prometheus and Grafana monitoring, Python and Bash diagnostic automation, and simulated incident response across 15 technical labs.",
-    technologies: [
-      "Kubernetes",
-      "Slurm",
-      "Prometheus",
-      "Grafana",
-      "Python",
-      "Bash",
-      "Linux",
-    ],
-    github:
-      "https://github.com/komolafetemitope14/ai-cluster-reliability-lab",
-  },
-  {
-    title: "Full-Stack Todo App",
-    category: "QA · CI/CD · FULL STACK",
-    description:
-      "Full-stack application with automated Cypress UI testing and Postman/Newman API tests integrated into a GitHub Actions CI/CD pipeline.",
-    technologies: [
-      "React",
-      "Node.js",
-      "Cypress",
-      "GitHub Actions",
-    ],
-    github:
-      "https://github.com/komolafetemitope14/Todo-app-testing-suite",
-  },
-  {
-    title: "AWS Event Notification System",
-    category: "AWS · SERVERLESS · AUTOMATION",
-    description:
-      "Event-driven AWS notification system designed around serverless architecture and messaging workflows for real-time operational alerts.",
-    technologies: [
-      "AWS",
-      "Serverless",
-      "Event Driven",
-    ],
-    github:
-      "https://github.com/komolafetemitope14/Aws-event-notification-system",
-  },
-  {
-    title: "Dockerized WordPress",
-    category: "DOCKER · INFRASTRUCTURE",
-    description:
-      "Containerised WordPress deployment demonstrating service isolation, persistent storage, container networking and reproducible infrastructure.",
-    technologies: [
-      "Docker",
-      "WordPress",
-      "Networking",
-    ],
-    github:
-      "https://github.com/komolafetemitope14/docker-wordpress",
-  },
-  {
-    title: "React Dictionary",
-    category: "REACT · WEB DEVELOPMENT",
-    description:
-      "Interactive React dictionary application featuring dynamic search, API-driven results and a responsive user interface.",
-    technologies: [
-      "React",
-      "JavaScript",
-      "API",
-    ],
-    github:
-      "https://github.com/komolafetemitope14/React-dictionary-1",
-  },
-  {
-    title: "Note App",
-    category: "APPLICATION DEVELOPMENT",
-    description:
-      "Note management application demonstrating practical application development and a user-focused interface for organising notes.",
-    technologies: [
-      "Application Development",
-    ],
-    github:
-      "https://github.com/komolafetemitope14/Note-App",
-  },
-];
+echo "========== STAGING CORRECTED FILE =========="
+git add src/sections/Projects.jsx && \
 
-function Projects() {
-  return (
-    <section
-      className="section projects"
-      id="projects"
-    >
-      <div className="section-content">
-        <p className="section-number">
-          04 / PROJECTS
-        </p>
+echo "========== FORMATTING CHECK ==========" && \
+git diff --cached --check && \
 
-        <h2 className="section-heading">
-          Selected engineering
-          <span> projects.</span>
-        </h2>
+echo "========== STAGED CHANGES ==========" && \
+git diff --cached --stat && \
 
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <motion.article
-              className="project-card"
-              key={project.title}
-              initial={{ opacity: 0, y: 35 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.07,
-              }}
-              viewport={{ once: true }}
-            >
-              <p className="project-category">
-                {project.category}
-              </p>
+echo "========== COMMITTING CHANGES ==========" && \
+git commit -m "feat: showcase AI cluster architecture and reorder featured projects" && \
 
-              <h3>{project.title}</h3>
+echo "========== PUSHING TO GITHUB ==========" && \
+git push origin main && \
 
-              {project.image && (
-                <a
-                  href={`${import.meta.env.BASE_URL}${project.image}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-image-link"
-                >
-                  <img
-                    src={`${import.meta.env.BASE_URL}${project.image}`}
-                    alt={`${project.title} system architecture`}
-                    className="project-image"
-                    loading="lazy"
-                  />
-                </a>
-              )}
+echo "========== FINAL GIT STATUS ==========" && \
+git status && \
 
-              <p className="project-description">
-                {project.description}
-              </p>
-
-              <div className="project-technologies">
-                {project.technologies.map((technology) => (
-                  <span key={technology}>
-                    {technology}
-                  </span>
-                ))}
-              </div>
-
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link"
-              >
-                View on GitHub
-                <span>↗</span>
-              </a>
-            </motion.article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export default Projects;
+echo "========== LATEST COMMIT ==========" && \
+git --no-pager log -1 --oneline
