@@ -1,3 +1,4 @@
+
 function Navbar() {
   return (
     <header className="navbar">
@@ -9,6 +10,7 @@ function Navbar() {
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#open-source">Open Source</a>
         <a href="#blog">Blog</a>
         <a href="#skills">Skills</a>
         <a href="#resume">Resume</a>
@@ -23,3 +25,4 @@ function Navbar() {
 }
 
 export default Navbar;
+

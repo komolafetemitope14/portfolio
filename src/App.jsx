@@ -1,3 +1,4 @@
+
 import Navbar from "./components/Navbar";
 import ChatBot from "./components/ChatBot";
 
@@ -6,6 +7,7 @@ import About from "./sections/About";
 import Achievements from "./sections/Achievements";
 import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
+import OpenSource from "./sections/OpenSource";
 import Blog from "./sections/Blog";
 import Skills from "./sections/Skills";
 import Certifications from "./sections/Certifications";
@@ -25,6 +27,7 @@ function App() {
         <Achievements />
         <Experience />
         <Projects />
+        <OpenSource />
         <Blog />
         <Skills />
         <Certifications />
@@ -38,3 +41,4 @@ function App() {
 }
 
 export default App;
+

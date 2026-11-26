@@ -1,3 +1,4 @@
+
 import { motion } from "motion/react";
 
 const projects = [
@@ -54,6 +55,40 @@ const projects = [
     ],
     github:
       "https://github.com/komolafetemitope14/opspilot-mcp",
+  },
+  {
+    title: "ConnectBridge",
+    subtitle:
+      "Secure Enterprise Middleware and API Integration Platform",
+    category:
+      "ENTERPRISE MIDDLEWARE · DEVOPS · SECURITY · API INTEGRATION",
+    status: "Deployment in Progress",
+    description:
+      "Enterprise middleware and API integration platform under development, designed to securely connect distributed applications through API management, identity and access management, message transformation and asynchronous messaging. The planned architecture includes automated infrastructure provisioning, container security, Kubernetes deployment and centralized observability in a fully local environment.",
+    technologyLabel: "Planned technology stack",
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "Apache Camel",
+      "RabbitMQ",
+      "Keycloak",
+      "Kong",
+      "PostgreSQL",
+      "Docker",
+      "Docker Compose",
+      "Kubernetes",
+      "Kind",
+      "Terraform",
+      "Ansible",
+      "Helm",
+      "Trivy",
+      "Grafana Loki",
+      "Grafana Alloy",
+      "Grafana",
+      "GitHub Actions",
+    ],
+    github:
+      "https://github.com/komolafetemitope14/connectbridge",
   },
   {
     title: "Full-Stack Todo App",
@@ -194,6 +229,49 @@ function Projects() {
 
               <h3>{project.title}</h3>
 
+              {project.subtitle && (
+                <p
+                  style={{
+                    fontSize: "0.95rem",
+                    fontWeight: 500,
+                    lineHeight: 1.5,
+                    marginBottom: "12px",
+                  }}
+                >
+                  {project.subtitle}
+                </p>
+              )}
+
+              {project.status && (
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    alignSelf: "flex-start",
+                    gap: "8px",
+                    padding: "6px 12px",
+                    marginBottom: "16px",
+                    borderRadius: "20px",
+                    border: "1px solid rgba(245, 158, 11, 0.35)",
+                    background: "rgba(245, 158, 11, 0.08)",
+                    color: "#f59e0b",
+                    fontSize: "0.75rem",
+                    fontWeight: 600,
+                  }}
+                >
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      width: "7px",
+                      height: "7px",
+                      borderRadius: "50%",
+                      background: "#f59e0b",
+                    }}
+                  />
+                  {project.status}
+                </div>
+              )}
+
               {project.image && (
                 <a
                   href={`${import.meta.env.BASE_URL}${project.image}`}
@@ -213,6 +291,18 @@ function Projects() {
               <p className="project-description">
                 {project.description}
               </p>
+
+              {project.technologyLabel && (
+                <p
+                  style={{
+                    fontSize: "0.75rem",
+                    fontWeight: 500,
+                    marginBottom: "8px",
+                  }}
+                >
+                  {project.technologyLabel}
+                </p>
+              )}
 
               <div className="project-technologies">
                 {project.technologies.map((technology) => (
@@ -261,3 +351,4 @@ function Projects() {
 }
 
 export default Projects;
+
