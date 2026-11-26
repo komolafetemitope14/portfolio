@@ -119,6 +119,44 @@ const projects = [
     github:
       "https://github.com/komolafetemitope14/Note-App",
   },
+  {
+    title: "Universal Mail AI",
+    category: "AI · FULL STACK · EMAIL AUTOMATION",
+    description:
+      "AI-first email client designed around a unified inbox, extensible email provider adapters, intelligent email summarization, smart reply generation and inbox prioritization using a modular application architecture.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Prisma",
+      "Tailwind CSS",
+      "Anthropic AI",
+      "Vercel",
+    ],
+    github:
+      "https://github.com/komolafetemitope14/Universal-mail-ai",
+  },
+  {
+    title: "E-Bookstore",
+    category: "FULL STACK · E-COMMERCE · CI/CD",
+    description:
+      "Responsive e-commerce application featuring digital and physical product editions, customer authentication, PostgreSQL database integration, row-level security and automated CI/CD deployment. Currently undergoing user acceptance testing (UAT).",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Supabase",
+      "PostgreSQL",
+      "GitHub Actions",
+      "GitHub Pages",
+    ],
+    website:
+      "https://komolafetemitope14.github.io/e-bookstore/",
+    websiteLabel: "View Live Website",
+    github:
+      "https://github.com/komolafetemitope14/e-bookstore",
+  },
 ];
 
 function Projects() {
@@ -184,15 +222,36 @@ function Projects() {
                 ))}
               </div>
 
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link"
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  alignItems: "center",
+                  gap: "16px",
+                }}
               >
-                View on GitHub
-                <span>↗</span>
-              </a>
+                {project.website && (
+                  <a
+                    href={project.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    {project.websiteLabel || "View Website"}
+                    <span>↗</span>
+                  </a>
+                )}
+
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
+                  View on GitHub
+                  <span>↗</span>
+                </a>
+              </div>
             </motion.article>
           ))}
         </div>
